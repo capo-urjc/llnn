@@ -11,7 +11,7 @@ This repository implements Look-Up Tables Neural Networks (LUTNNs)
 ## Installation
 `pip install -e .`
 
-## Training example
+## Importing LUTLayer
 
 ```python
 import torch
@@ -24,6 +24,15 @@ model = torch.nn.Sequential(
     Aggregation(num_classes=10, tau = 10)
 )
 ```
-## VHDL
 
+## Train a model
 
+`python main.py --train --name model1 --dataset mnist --batch-size 128 -lr 0.01 --num-iterations 10000`
+
+## Test a trained model
+
+`python main.py --load --name model1 --dataset mnist`
+
+## VHDL code generation
+
+` python vhdl/convert2vhdl.py --model model1`

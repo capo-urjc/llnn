@@ -1,6 +1,6 @@
 import argparse
 import numpy as np
-import random
+import random, os
 import torch
 from torch.optim.lr_scheduler import ReduceLROnPlateau, ExponentialLR
 from tqdm import tqdm
@@ -9,6 +9,7 @@ from utils.mnist import load_mnist_dataset
 from utils.cifar10 import load_cifar10_dataset
 from utils.uci_datasets import AdultDataset, BreastCancerDataset
 from utils.jsc import JetSubstructureDataset
+from vhdl.convert2vhdl import get_model_params, gen_vhdl_code
 
 
 def get_args():
@@ -72,7 +73,7 @@ def train(model, train_loader, test_loader, args, device):
             test_accuracy_train_mode = evaluation(model, test_loader, device, mode=True)
 
             scheduler.step(test_accuracy_eval_mode)
-            print(f' LR: {scheduler.get_last_lr()},'
+            print(f' LR: {scheduler._last_lr},'
                   f' train_acc_eval_mode: {train_accuracy_eval_mode},'
                   f' test_acc_eval_mode: {test_accuracy_eval_mode},'
                   f' test_acc_train_mode: {test_accuracy_train_mode},'
@@ -144,5 +145,12 @@ if __name__ == "__main__":
         model = train(model, train_loader, test_loader, args, device)
     else:
         print(f"Inference accuracy: {evaluation(model, test_loader, device, False)}")
+        if args.vhdl:
+            number_of_layers, num_neurons, lut_size, number_of_inputs, number_of_classes = get_model_params(model)
+            gen_vhdl_code(model, args.name, number_of_layers, number_of_classes, number_of_inputs, num_neurons,
+                          lut_size)
     if args.save:
+        directory = "models"
+        if not os.path.exists(directory):
+            os.makedirs(directory)
         torch.save(model, f"models/{args.name}.pth")

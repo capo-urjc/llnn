@@ -286,7 +286,7 @@ def get_net_layers(model, verbose=False):
                 print('Skipping torch.nn.Flatten layer ({}).'.format(type(layer)))
         elif isinstance(layer, Aggregation):
             if verbose:
-                print('Skipping GroupSum layer ({}).'.format(type(layer)))
+                print('Skipping  layer ({}).'.format(type(layer)))
         else:
             assert False, 'Error: layer {} / {} unknown.'.format(type(layer), layer)
     return layers
@@ -308,11 +308,11 @@ def get_model_params(model):
     return number_of_layers, num_neurons, lut_size, number_of_inputs, number_of_classes
 
 
-if __name__ == "__main__":
-    args = get_args()
-    if args.name is None:
-        args.name = args.model
+# if __name__ == "__main__":
+#     args = get_args()
+#     if args.name is None:
+#         args.name = args.model
 
-    model = torch.load(f"models/{args.model}.pth")
-    number_of_layers, num_neurons, lut_size, number_of_inputs, number_of_classes = get_model_params(model)
-    gen_vhdl_code(model, args.name, number_of_layers, number_of_classes, number_of_inputs, num_neurons, lut_size)
+#     model = torch.load(f"../models/{args.model}.pth")
+#     number_of_layers, num_neurons, lut_size, number_of_inputs, number_of_classes = get_model_params(model)
+#     gen_vhdl_code(model, args.name, number_of_layers, number_of_classes, number_of_inputs, num_neurons, lut_size)
