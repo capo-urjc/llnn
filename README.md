@@ -1,8 +1,8 @@
-<img src="https://github.com/DavidConcha/DiffLUTs/assets/17121671/024f0078-bb97-4476-a44c-005191a7f7c0" alt="image" style="width:18%;">
+<img src="https://github.com/user-attachments/assets/3c150f9b-339d-4299-bb97-12ea93d8f0cb" alt="image" style="width:18%;">
 
 # LUTNN - A Look-Up Table Neural Network trainable architecture
 
-![image](https://github.com/DavidConcha/DiffLUTs/assets/17121671/302019cc-f565-4381-bc74-a83027997319)
+![g_abstract](https://github.com/user-attachments/assets/5fc1eb5d-7601-40f2-a293-b35771294d76)
 
 
 This repository implements Look-Up Tables Neural Networks (LUTNNs)
@@ -10,17 +10,14 @@ This repository implements Look-Up Tables Neural Networks (LUTNNs)
 ## Training example
 
 ```python
-from lnn import LogicLayer, GroupSum
+from lutnn import lutlayer, aggregation
 import torch
 
 model = torch.nn.Sequential(
     torch.nn.Flatten(),
-    LogicLayer(784, 16_000),
-    LogicLayer(16_000, 16_000),
-    LogicLayer(16_000, 16_000),
-    LogicLayer(16_000, 16_000),
-    LogicLayer(16_000, 16_000),
-    GroupSum(k=10, tau=30)
+    lutlayer(784, 16_000),
+    lutlayer(16_000, 16_000),
+    aggregation(k=10, tau=30)
 )
 ```
 ## VHDL
