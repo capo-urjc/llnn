@@ -37,7 +37,7 @@ class MNIST20Transform:
         return value1, value2
 
 
-def load_mnist_dataset(batch_size, mnist20):
+def load_mnist_dataset(batch_size, mnist20=False):
     trans = [transforms.ToTensor()]
     if mnist20:
         trans.append(MNIST20Transform())

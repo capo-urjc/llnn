@@ -7,17 +7,21 @@
 
 This repository implements Look-Up Tables Neural Networks (LUTNNs)
 
+
+## Installation
+`pip install -e .`
+
 ## Training example
 
 ```python
-from lutnn import lutlayer, aggregation
 import torch
+from lutnn.lutlayer import LUTLayer, Aggregation
 
 model = torch.nn.Sequential(
     torch.nn.Flatten(),
-    lutlayer(784, 16_000),
-    lutlayer(16_000, 16_000),
-    aggregation(k=10, tau=30)
+    LUTLayer(input_dim=1000, lut_size=6, n_luts=2048),
+    LUTLayer(input_dim=2048, lut_size=6, n_luts=4000),
+    Aggregation(num_classes=10, tau = 10)
 )
 ```
 ## VHDL
