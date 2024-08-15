@@ -1,9 +1,8 @@
-<img src="https://github.com/user-attachments/assets/3c150f9b-339d-4299-bb97-12ea93d8f0cb" alt="image" style="width:18%;">
+<img src="https://github.com/user-attachments/assets/858cda97-d734-4faf-946a-88f9972b9334" alt="image" style="width:18%;">
 
 # LUTNN - A Look-Up Table Neural Network trainable architecture
 
-![g_abstract](https://github.com/user-attachments/assets/5fc1eb5d-7601-40f2-a293-b35771294d76)
-
+![g_abstract](https://github.com/user-attachments/assets/1f85e6a0-8a10-417d-bc6e-a6e793369c41)
 
 This repository implements Look-Up Tables Neural Networks (LUTNNs)
 
