@@ -15,11 +15,11 @@ from vhdl.convert2vhdl import get_model_params, gen_vhdl_code
 def get_args():
     parser = argparse.ArgumentParser(description='Train LUTNN.')
 
-    parser.add_argument('--dataset', type=str, choices=['mnist', 'mnist20x20', 'cifar10-3', 'cifar10-31', 'adult', 'breast', 'jsc'], default="jsc", help='Dataset to use')
+    parser.add_argument('--dataset', type=str, choices=['mnist', 'mnist20x20', 'cifar10-3', 'cifar10-31', 'adult', 'breast', 'jsc'], default="mnist20x20", help='Dataset to use')
     parser.add_argument('--seed', type=int, default=0, help='seed (default: 0)')
     parser.add_argument('--batch-size', '-bs', type=int, default=128, help='batch size (default: 128)')
     parser.add_argument('--learning-rate', '-lr', type=float, default=0.01, help='learning rate (default: 0.01)')
-    parser.add_argument('--tau', '-t', type=float, default=10, help='the softmax temperature tau')
+    parser.add_argument('--tau', '-t', type=float, default=10, help='the softmax temperature of the aggregation output')
 
     parser.add_argument('--num-iterations', '-ni', type=int, default=15_000, help='Number of training iterations (default: 15000)')
     parser.add_argument('--eval-freq', '-ef', type=int, default=1_000, help='Evaluation frequency (default: 1000)')

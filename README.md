@@ -26,7 +26,7 @@ model = torch.nn.Sequential(
 
 ## Train a model
 
-`python main.py --train --name model1 --dataset mnist --batch-size 128 -lr 0.01 --num-iterations 10000`
+`python main.py --train --save --name model1 --dataset mnist --batch-size 128 -lr 0.01 --num-iterations 10000`
 
 ## Test a trained model
 
