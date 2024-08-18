@@ -35,3 +35,7 @@ model = torch.nn.Sequential(
 ## VHDL code generation
 
 ` python vhdl/convert2vhdl.py --model model1`
+
+## LUTNN Testbench
+
+We offer a testbench with VHDL code and additional utility functions (e.g., `bin_to_hex`) for validating a LUTNN trained on the MNIST dataset.
