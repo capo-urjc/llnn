@@ -43,4 +43,4 @@ model = torch.nn.Sequential(
 
 ## LUTNN Testbench
 
-We offer a testbench with VHDL code and additional utility functions (e.g., `bin_to_hex`) for validating a LUTNN trained on the MNIST dataset.
+We offer a testbench with VHDL code and additional utility functions (e.g., `bin_to_hex`) for validating a LLNN trained on the MNIST dataset.
