@@ -1,10 +1,10 @@
 <img src="https://github.com/user-attachments/assets/858cda97-d734-4faf-946a-88f9972b9334" alt="image" style="width:18%;">
 
-# LUTNN - A Look-Up Table Neural Network trainable architecture
+# LLNN - A Look-Up Table Logic Neural Network trainable architecture
 
 ![g_abstract](https://github.com/user-attachments/assets/1f85e6a0-8a10-417d-bc6e-a6e793369c41)
 
-This repository implements Look-Up Tables Neural Networks (LUTNNs)
+This repository implements Look-Up Tables Logic Neural Networks (LLNNs)
 
 
 ## Installation
