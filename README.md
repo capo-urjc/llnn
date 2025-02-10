@@ -1,4 +1,4 @@
-<img src="https://github.com/user-attachments/assets/858cda97-d734-4faf-946a-88f9972b9334" alt="image" style="width:18%;">
+<img src="https://github.com/user-attachments/assets/7c621714-ee04-443a-bb0b-b76cabb5b4a5" alt="image" style="width:18%;">
 
 # LLNN - A Look-Up Table Logic Neural Network trainable architecture
 
