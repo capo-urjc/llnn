@@ -1,11 +1,34 @@
 <img src="https://github.com/user-attachments/assets/7c621714-ee04-443a-bb0b-b76cabb5b4a5" alt="image" style="width:18%;">
 
-# LLNN - A Look-Up Table Logic Neural Network trainable architecture
+# LLNN: A Scalable LUT-Based Logic Neural Network Architecture for FPGAs
+
+<img width="3180" height="1974" alt="model_comparison_avg-1" src="https://github.com/user-attachments/assets/59340012-51a4-49fc-b311-68f6f33bbc87" />
+
+
+
+This repository implements Look-Up Tables Logic Neural Networks (LLNNs) presented in:
+
+[LLNN: A Scalable LUT-Based Logic Neural Network Architecture for FPGAs](https://ieeexplore.ieee.org/abstract/document/11154450)
 
 ![g_abstract](https://github.com/user-attachments/assets/1f85e6a0-8a10-417d-bc6e-a6e793369c41)
 
-This repository implements Look-Up Tables Logic Neural Networks (LLNNs)
+## 📖 Citing
 
+If you use this work, please cite the following paper:
+
+```bibtex
+@ARTICLE{11154450,
+  author={Ramírez, Iván and Garcia-Espinosa, Francisco J. and Concha, David and Aranda, Luis Alberto and Schiavi, Emanuele},
+  journal={IEEE Transactions on Circuits and Systems I: Regular Papers}, 
+  title={LLNN: A Scalable LUT-Based Logic Neural Network Architecture for FPGAs}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={1-13},
+  keywords={Logic gates;Field programmable gate arrays;Biological neural networks;Table lookup;Hardware;Computer architecture;Training;Neurons;Logic;Complexity theory;Logic neural networks;LUT-based neural networks;FPGA implementation;scalability in hardware neural networks;real-time inference},
+  doi={10.1109/TCSI.2025.3606054}
+}
+```
 
 ## Installation
 `pip install -e .`
