@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llnn"
+version = "0.1.0"
+description = "LLNN: A Scalable LUT-Based Logic Neural Network Architecture for FPGAs"
+readme = "README.md"
+requires-python = ">=3.7"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Capo URJC", email = "ivan.ramirez@urjc.es" },
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "torch>=1.9.0",
+    "numpy",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/capo-urjc/llnn"
+"Bug Tracker" = "https://github.com/capo-urjc/llnn/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["llnn*"]
+exclude = ["examples*", "vhdl*", "tests*"]

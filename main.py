@@ -4,7 +4,7 @@ import random, os
 import torch
 from torch.optim.lr_scheduler import ReduceLROnPlateau, ExponentialLR
 from tqdm import tqdm
-from lutnn.lutnn import LUTNN
+from llnn.lutnn import LUTNN
 from utils.mnist import load_mnist_dataset
 from utils.cifar10 import load_cifar10_dataset
 from utils.uci_datasets import AdultDataset, BreastCancerDataset

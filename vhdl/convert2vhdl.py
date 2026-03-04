@@ -8,7 +8,7 @@ import numpy as np
 from torch.nn import Flatten
 import torch.nn.functional as F
 sys.path.append(str(Path(__file__).parent.parent))
-from lutnn.lutlayer import LUTLayer, Aggregation
+from llnn.lutlayer import LUTLayer, Aggregation
 
 
 def get_args():

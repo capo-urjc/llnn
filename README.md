@@ -37,13 +37,13 @@ If you use this work, please cite the following paper:
 
 ```python
 import torch
-from lutnn.lutlayer import LUTLayer, Aggregation
+from llnn.lutlayer import LUTLayer, Aggregation
 
 model = torch.nn.Sequential(
     torch.nn.Flatten(),
     LUTLayer(input_dim=1000, lut_size=6, n_luts=2048),
     LUTLayer(input_dim=2048, lut_size=6, n_luts=4000),
-    Aggregation(num_classes=10, tau = 10)
+    Aggregation(num_classes=10, tau=10)
 )
 ```
 
