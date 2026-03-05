@@ -1,5 +1,6 @@
 import torch
 import torch.nn.functional as F
+import string
 
 def bin2dec(b, bits):
     """
@@ -108,15 +109,18 @@ class LUTLayer(torch.nn.Module):
         :param x: Input tensor
         :return: Probability tensor
         """
-        x = x[..., None]
+        x = x.unsqueeze(-1)
         x_ = torch.cat([x, 1 - x], dim=-1)
-        b, neur, n_components, _ = x.shape
+        b, neur, n_components, _ = x_.shape
 
-        temp = torch.einsum('bnp,bnq->bnpq', x_[:, :, 0, :], x_[:, :, 1, :])
-        for i in range(2, n_components):
-            temp = torch.einsum('bnp,bnq->bnpq', temp.reshape(b, neur, -1), x_[:, :, i, :])
+        alphabet = string.ascii_letters
+        indices = [alphabet[i] for i in range(n_components)]
+        equation = f"{','.join(['...' + i for i in indices])}->...{''.join(indices)}"
 
-        return temp.reshape(b, neur, -1).flip(-1)
+        components = x_.unbind(dim=2)
+        result = torch.einsum(equation, *components)
+
+        return result.reshape(b, neur, -1).flip(-1)
 
     def extra_repr(self):
         return 'num_luts={}, lut_size={}'.format(self.n_luts, self.lut_size)
