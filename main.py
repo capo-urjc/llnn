@@ -9,7 +9,7 @@ from utils.mnist import load_mnist_dataset
 from utils.cifar10 import load_cifar10_dataset
 from utils.uci_datasets import AdultDataset, BreastCancerDataset
 from utils.jsc import JetSubstructureDataset
-from vhdl.convert2vhdl import get_model_params, gen_vhdl_code
+from hdl.vhdl.convert2vhdl import get_model_params, gen_vhdl_code
 
 
 def get_args():
@@ -29,7 +29,7 @@ def get_args():
     parser.add_argument('--lut_size', '-s', nargs='*', type=int, default=[2], help='LUT input size (default: 2)')
 
     parser.add_argument('--name', type=str, help='Experiment name')
-    parser.add_argument('--vhdl', action='store_true', help='Get VHDL code from net weights.')
+    parser.add_argument('--hdl', action='store_true', help='Get VHDL code from net weights.')
     parser.add_argument('--save', action='store_true', help='Save model weights.')
     parser.add_argument('--train', action='store_true', help='Train model.')
     parser.add_argument('--load', action='store_true', help='Load model')

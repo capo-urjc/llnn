@@ -30,7 +30,7 @@ def get_args():
     parser.add_argument('--lut_size', '-s', nargs='*', type=int, default=[6], help='LUT input size (default: 2)')
 
     parser.add_argument('--name', default='model', type=str, help='Experiment name')
-    parser.add_argument('--vhdl', action='store_true', help='Get VHDL code from net weights.')
+    parser.add_argument('--hdl', action='store_true', help='Get VHDL code from net weights.')
     parser.add_argument('--save', action='store_true', help='Save model weights.')
     parser.add_argument('--train', action='store_true', help='Train model.')
     parser.add_argument('--load', action='store_true', help='Load model')
