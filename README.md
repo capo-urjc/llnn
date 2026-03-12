@@ -31,7 +31,7 @@ If you use this work, please cite the following paper:
 ```
 
 ## Installation
-`pip install -e .`
+`pip install llnn`
 
 ## Importing LUTLayer
 
@@ -60,10 +60,10 @@ model = torch.nn.Sequential(
 
 ![Toolflow 1](https://github.com/user-attachments/assets/2e751f7c-c13d-48fd-9776-e09ff8ce25f3)
 
-## VHDL code generation example
+## HDL code generation example
 
-` python vhdl/convert2vhdl.py --model model1`
+` python hdl/vhdl/convert2vhdl.py --model model1`
 
-## LUTNN Testbench
-
-We offer a testbench with VHDL code and additional utility functions (e.g., `bin_to_hex`) for validating a LLNN trained on the MNIST dataset.
+## LLNN Testbench
+ 
+We offer a testbench in VHDL code to test a trained MNIST network and additional utility functions to convert the MNIST dataset into binary inputs for hardware validation in simulation.
