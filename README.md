@@ -2,11 +2,10 @@
 
 # LLNN: A Scalable LUT-Based Logic Neural Network Architecture for FPGAs
 
-<img width="3180" height="1974" alt="model_comparison_avg-1" src="https://github.com/user-attachments/assets/59340012-51a4-49fc-b311-68f6f33bbc87" />
-
-
+![model_comparison_avg-1](https://github.com/user-attachments/assets/59340012-51a4-49fc-b311-68f6f33bbc87)
 
 This repository implements Look-Up Tables Logic Neural Networks (LLNNs) presented in:
+
 
 [LLNN: A Scalable LUT-Based Logic Neural Network Architecture for FPGAs](https://ieeexplore.ieee.org/abstract/document/11154450)
 
