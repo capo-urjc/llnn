@@ -83,8 +83,8 @@ def gen_top_file(sv_path, number_of_layers, number_of_classes, num_neurons, outp
             file.write("\t);\n")
             file.write("\n")
 
-        # Emit a parameterized popcount function (Yosys doesn't support $countones)
-        result_width = (outputs_per_class - 1).bit_length() + 1  # bits needed to hold count
+        # Emit a parameterized popcount function
+        result_width = (outputs_per_class - 1).bit_length() + 1
         file.write(f"\t// Parameterized popcount function\n")
         file.write(f"\tfunction automatic [{result_width-1}:0] popcount;\n")
         file.write(f"\t\tinput [{outputs_per_class-1}:0] v;\n")
