@@ -263,7 +263,8 @@ def get_prefix_sums(layers):
     return prefix_sums
 
 
-def get_net_layers(model, verbose=False):
+# def get_net_layers(model, verbose=False):
+def get_net_layers(model, lut_size, verbose=False):
     layers = []
     first = True
     print(model.model)

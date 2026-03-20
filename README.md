@@ -48,11 +48,15 @@ model = torch.nn.Sequential(
 
 ## Train a model
 
-`python main.py --train --save --name model1 --dataset mnist --batch-size 128 -lr 0.01 --num-iterations 10000`
+```bash
+python3 main.py --train --save --name model1 --dataset mnist20x20 --batch-size 128 -lr 0.01 --num-iterations 1000
+```
 
 ## Test a trained model
 
-`python main.py --load --name model1 --dataset mnist`
+```bash
+python3 main.py --load --name model1 --dataset mnist20x20
+```
 
 
 # VHDL
@@ -61,7 +65,13 @@ model = torch.nn.Sequential(
 
 ## HDL code generation example
 
-` python hdl/vhdl/convert2vhdl.py --model model1`
+```bash
+python3 main.py --load --vhdl --name model1 --dataset mnist20x20
+python3 hdl/vhdl/convert2vhdl.py --model model1
+
+python3 main.py --load --sv --name model1 --dataset mnist20x20
+python3 hdl/sv/convert2sv.py --model model1
+```
 
 ## LLNN Testbench
  
