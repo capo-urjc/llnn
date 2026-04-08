@@ -250,7 +250,7 @@ def gen_vhdl_code(input_data, name, number_of_layers, number_of_classes, number_
     gen_top_file(vhdl_path, number_of_layers, number_of_classes, num_neurons, outputs_per_class, output_bits)
     gen_comparator_file(vhdl_path)
 
-    layers = get_net_layers(input_data, lut_size)
+    layers = get_net_layers(input_data)
     process_file(layers, vhdl_path, num_neurons, lut_size)
 
 
@@ -263,8 +263,7 @@ def get_prefix_sums(layers):
     return prefix_sums
 
 
-# def get_net_layers(model, verbose=False):
-def get_net_layers(model, lut_size, verbose=False):
+def get_net_layers(model, verbose=False):
     layers = []
     first = True
     print(model.model)
