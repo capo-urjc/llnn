@@ -1,5 +1,5 @@
 from torch import nn
-from lutnn.lutlayer import LUTLayer, Aggregation
+from llnn.lutlayer import LUTLayer, Aggregation
 
 
 class LUTNN(nn.Module):
